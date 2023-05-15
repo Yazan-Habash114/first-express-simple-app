@@ -28,11 +28,11 @@ todosRouter
     res.send("Todo has been edited successfully");
   })
   .delete(validateItemExistence, (req, res) => {
-    const id = req.params.id;
+    const objToDelete = req.obj;
     if (todos.length != 0) {
       let objToDeleteIndex;
       todos.forEach((obj, index) => {
-        if (obj.id == id) objToDeleteIndex = index;
+        if (obj.id == objToDelete.id) objToDeleteIndex = index;
       });
       todos.splice(objToDeleteIndex, 1);
       res.status(204).send();

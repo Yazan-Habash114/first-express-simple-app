@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Document</title>
+  </head>
+  <body>
+    <img src="sea.jpg" alt="Sea" width="400px" height="300px" />
+    <ul id="list"></ul>
+    <script>
+      fetch("http://localhost:3210/todos")
+        .then((response) => response.json())
+        .then((data) => {
+          data.map((item) => {
+            let li = document.createElement("li");
+            li.appendChild(document.createTextNode(item.title));
+            document.getElementById("list").appendChild(li);
+          });
+        });
+    </script>
+  </body>
+</html>

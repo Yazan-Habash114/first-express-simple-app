@@ -1,5 +1,5 @@
 import express, { json } from "express";
-import todosRouter from "./public/routes/todosRouter.js";
+import todosRouter from "./routes/todosRouter.js";
 
 const app = express();
 const port = 4444;
